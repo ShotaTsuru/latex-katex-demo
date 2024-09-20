@@ -1,26 +1,20 @@
+// src/App.tsx
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import MathRenderer from './MathRenderer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => {
+    const content = `
+        以下の数式を表示します：
+        ピタゴラスの定理：\\( a^2 + b^2 = c^2 \\)
+        定積分：\\[ \\int_0^\\infty e^{-x^2} \\, dx = \\frac{\\sqrt{\\pi}}{2} \\]
+    `;
+    
+    return (
+        <div style={{ padding: '20px' }}>
+            <h1>KaTeX Example</h1>
+            <MathRenderer content={content} />
+        </div>
+    );
+};
 
 export default App;
